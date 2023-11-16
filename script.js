@@ -54,7 +54,7 @@ buscarMontarVideos()
 
 const barraPesquisa = document.querySelector('.pesquisar__input')
 
-barraPesquisa.addEventListener('input', filtrarPesquisa())
+barraPesquisa.addEventListener('input', filtrarPesquisa)
 
 
 function filtrarPesquisa() {
@@ -74,11 +74,11 @@ function filtrarPesquisa() {
 
     videos.forEach((video) => {
 
-        const titulo = video.querySelector('.titulo-video')
+        const titulo = video.querySelector('.titulo-video').textContent.toLowerCase()
 
         if (!titulo.includes(valorFiltro)) {
             
-            video.computedStyleMap.display = 'none'
+            video.style.display = 'none'
 
         } else {
 
